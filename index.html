@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shop management dashboard" />
+  <title>Shop management V1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="auth-page">
+    <div class="auth-card">
+      <div class="auth-brand">🛍️ Shop management V1</div>
+
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" data-auth-tab="login">Login</button>
+        <button type="button" class="auth-tab" data-auth-tab="register">Register</button>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <h1>Welcome back</h1>
+        <p class="auth-subtitle">Log in to your account.</p>
+        <div class="field">
+          <label for="login-username">Username</label>
+          <input id="login-username" name="username" type="text" autocomplete="username" required />
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+        </div>
+        <div id="login-message" class="auth-message"></div>
+        <button type="submit" class="btn-primary-full auth-submit">Login</button>
+      </form>
+
+      <form id="register-form" class="auth-form" style="display:none">
+        <h1>Create account</h1>
+        <p class="auth-subtitle">Register a new shop account.</p>
+        <div class="field">
+          <label for="register-username">Username</label>
+          <input id="register-username" name="username" type="text" autocomplete="username" required />
+        </div>
+        <div class="field">
+          <label for="register-password">Password</label>
+          <input id="register-password" name="password" type="password" autocomplete="new-password" required />
+        </div>
+        <div class="field">
+          <label for="register-confirm">Confirm password</label>
+          <input id="register-confirm" name="confirmPassword" type="password" autocomplete="new-password" required />
+        </div>
+        <div id="register-message" class="auth-message"></div>
+        <button type="submit" class="btn-primary-full auth-submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="app-shell" class="app" style="display:none">
+
+    <aside class="sidebar">
+      <div class="brand">🛍️ Shop management V1</div>
+      <button class="navitem active" data-view="overview"><i data-lucide="layout-dashboard"></i> Overview</button>
+      <button class="navitem" data-view="sales"><i data-lucide="shopping-cart"></i> Sales</button>
+      <button class="navitem" data-view="inventory"><i data-lucide="package"></i> Inventory</button>
+      <button class="navitem" data-view="reports"><i data-lucide="bar-chart-3"></i> Reports</button>
+    </aside>
+
+    <main class="main" id="main-content">
+      <div class="empty">Loading your shop data…</div>
+    </main>
+
+    <div id="modal-root"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
